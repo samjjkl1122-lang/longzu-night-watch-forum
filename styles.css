@@ -50,6 +50,10 @@ input {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .noise {
   position: fixed;
   inset: 0;
@@ -213,6 +217,54 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+}
+
+.hero-tags,
+.inline-tags,
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-tags {
+  max-width: 580px;
+  margin-top: 26px;
+}
+
+.hero-tags button,
+.inline-tags button,
+.tag-matrix button,
+#detail-reset,
+.detail-links a,
+.x-actions button {
+  border: 1px solid var(--line);
+  background: rgba(215, 166, 77, 0.035);
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.hero-tags button,
+.inline-tags button,
+#detail-reset,
+.detail-links a,
+.x-actions button {
+  min-height: 32px;
+  padding: 0 10px;
+}
+
+.hero-tags button:hover,
+.inline-tags button:hover,
+.tag-matrix button:hover,
+#detail-reset:hover,
+.detail-links a:hover,
+.x-actions button:hover {
+  border-color: var(--line-strong);
+  background: rgba(215, 166, 77, 0.1);
+  transform: translateY(-1px);
 }
 
 .button {
@@ -400,9 +452,140 @@ h1 {
   line-height: 1.7;
 }
 
+.inline-tags {
+  margin-top: 14px;
+}
+
 .thread-row > span {
   justify-self: end;
   color: var(--blue);
+}
+
+.tags-section,
+.detail-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.tag-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tag-matrix button {
+  display: flex;
+  min-height: 86px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  text-align: left;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.tag-matrix span {
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.detail-card {
+  border: 1px solid var(--line-strong);
+  background:
+    linear-gradient(180deg, rgba(16, 23, 31, 0.96), rgba(7, 10, 15, 0.96)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.detail-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 22px;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.detail-card h3 {
+  margin: 0;
+  padding: 30px 28px 12px;
+  font-family: var(--serif);
+  font-size: clamp(30px, 5vw, 54px);
+  line-height: 1.08;
+}
+
+#detail-summary {
+  max-width: 880px;
+  margin: 0;
+  padding: 0 28px 28px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-grid > div,
+.detail-note {
+  padding: 24px 28px;
+}
+
+.detail-grid > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.detail-card h4 {
+  margin: 0 0 14px;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.detail-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-card li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.detail-card li::before {
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  content: "◆";
+  font-size: 10px;
+}
+
+.detail-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.detail-links {
+  border-top: 1px solid var(--line);
+  padding: 20px 28px 26px;
 }
 
 .project-grid {
@@ -424,6 +607,8 @@ h1 {
   align-items: start;
   min-height: 172px;
   padding: 24px;
+  color: inherit;
+  text-align: left;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
@@ -477,6 +662,13 @@ h1 {
   color: var(--amber);
   font-family: var(--mono);
   font-size: 12px;
+}
+
+.x-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  align-items: center;
 }
 
 .about {
@@ -615,6 +807,16 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .tag-matrix,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
   .x-strip {
     flex-direction: column;
     align-items: flex-start;
@@ -647,6 +849,12 @@ h1 {
   .repo-card,
   .contact-card div {
     grid-template-columns: 1fr;
+  }
+
+  .detail-topline,
+  .x-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .featured-thread a {

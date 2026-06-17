@@ -12,7 +12,7 @@
       rel="icon"
       href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%2305080d"/><rect x="10" y="10" width="44" height="44" fill="none" stroke="%23d7a64d" stroke-width="2"/><text x="32" y="39" font-size="24" text-anchor="middle" fill="%23d7a64d" font-family="monospace">N</text></svg>'
     />
-    <link rel="stylesheet" href="./styles.css?v=2" />
+    <link rel="stylesheet" href="./styles.css?v=3" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -25,6 +25,7 @@
         <a href="#top">首页</a>
         <a href="#posts">文章</a>
         <a href="#notes">手札</a>
+        <a href="#tags">标签</a>
         <a href="#projects">项目</a>
         <a href="#about">关于</a>
       </nav>
@@ -52,6 +53,11 @@
             <a class="button primary" href="#posts">进入守夜人论坛</a>
             <a class="button ghost" href="#projects">查看装备部项目</a>
           </div>
+          <div class="hero-tags" aria-label="热门标签">
+            <button type="button" data-detail="tag-cassell">卡塞尔学院</button>
+            <button type="button" data-detail="tag-team">路明非小队</button>
+            <button type="button" data-detail="tag-dragon">龙王档案</button>
+          </div>
         </div>
 
         <aside class="signal-panel" aria-label="最新文章">
@@ -67,7 +73,7 @@
                 一份写给守夜人论坛的同人日志：从卡塞尔学院出发，整理龙王、言灵与小队路线。
               </p>
             </div>
-            <a href="#posts" aria-label="阅读诺玛通告">
+            <a href="#detail-panel" data-detail="post-team" aria-label="阅读诺玛通告">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13m-5-5 5 5-5 5" />
               </svg>
@@ -89,48 +95,119 @@
           <h2>守夜人帖子</h2>
         </div>
         <div class="thread-list" aria-label="文章列表">
-          <article class="thread-row is-active" tabindex="0">
+          <article class="thread-row is-active" tabindex="0" data-detail="post-team">
             <time datetime="2026-06-17">06.17</time>
             <div>
               <h3>路明非、楚子航与恺撒的夜间复盘</h3>
               <p>从卡塞尔学院任务记录切入，整理小队关系、言灵线索和未完成的龙族问题。</p>
+              <div class="inline-tags">
+                <button type="button" data-detail="tag-team">路明非小队</button>
+                <button type="button" data-detail="tag-cassell">卡塞尔学院</button>
+                <button type="button" data-detail="tag-word-spirit">言灵</button>
+              </div>
             </div>
             <span>Essay</span>
           </article>
-          <article class="thread-row" tabindex="0">
+          <article class="thread-row" tabindex="0" data-detail="post-tools">
             <time datetime="2026-06-05">06.05</time>
             <div>
               <h3>装备部不完全工具箱</h3>
               <p>假如装备部给个人博客写 README，会留下哪些爆炸边缘但好用的工具。</p>
+              <div class="inline-tags">
+                <button type="button" data-detail="tag-tools">装备部</button>
+                <button type="button" data-detail="tag-norma">诺玛</button>
+                <button type="button" data-detail="tag-build">建站日志</button>
+              </div>
             </div>
             <span>Build</span>
           </article>
-          <article class="thread-row" tabindex="0">
+          <article class="thread-row" tabindex="0" data-detail="post-nibelungen">
             <time datetime="2026-05-22">05.22</time>
             <div>
               <h3>尼伯龙根入口猜想</h3>
               <p>把城市夜路、旧地铁、雨声和异常空间当作一次同人设定笔记。</p>
+              <div class="inline-tags">
+                <button type="button" data-detail="tag-nibelungen">尼伯龙根</button>
+                <button type="button" data-detail="tag-city">城市传闻</button>
+                <button type="button" data-detail="tag-atmosphere">雨夜</button>
+              </div>
             </div>
             <span>Note</span>
           </article>
-          <article class="thread-row" tabindex="0">
+          <article class="thread-row" tabindex="0" data-detail="post-bronze">
             <time datetime="2026-05-09">05.09</time>
             <div>
               <h3>青铜与火之王档案索引</h3>
               <p>以论坛帖子的方式重排龙王档案、事件时间线和读书时留下的疑问。</p>
+              <div class="inline-tags">
+                <button type="button" data-detail="tag-dragon">龙王档案</button>
+                <button type="button" data-detail="tag-bronze">青铜与火</button>
+                <button type="button" data-detail="tag-timeline">时间线</button>
+              </div>
             </div>
             <span>Log</span>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="projects section-band">
+      <section id="tags" class="tags-section section-band">
         <div class="section-heading">
           <p>Index 02</p>
+          <h2>标签索引</h2>
+        </div>
+        <div class="tag-matrix" aria-label="标签索引">
+          <button type="button" data-detail="tag-cassell">卡塞尔学院<span>6 条线索</span></button>
+          <button type="button" data-detail="tag-team">路明非小队<span>5 条线索</span></button>
+          <button type="button" data-detail="tag-dragon">龙王档案<span>4 条线索</span></button>
+          <button type="button" data-detail="tag-nibelungen">尼伯龙根<span>3 条线索</span></button>
+          <button type="button" data-detail="tag-norma">诺玛<span>3 条线索</span></button>
+          <button type="button" data-detail="tag-tools">装备部<span>2 条线索</span></button>
+          <button type="button" data-detail="tag-word-spirit">言灵<span>4 条线索</span></button>
+          <button type="button" data-detail="tag-city">城市传闻<span>2 条线索</span></button>
+        </div>
+      </section>
+
+      <section id="detail-panel" class="detail-section section-band" aria-live="polite">
+        <div class="section-heading">
+          <p>Selected Thread</p>
+          <h2>档案详情</h2>
+        </div>
+        <article class="detail-card">
+          <div class="detail-topline">
+            <span id="detail-kind">THREAD</span>
+            <button type="button" id="detail-reset">回到默认档案</button>
+          </div>
+          <h3 id="detail-title">路明非、楚子航与恺撒的夜间复盘</h3>
+          <p id="detail-summary">
+            从卡塞尔学院任务记录切入，整理小队关系、言灵线索和未完成的龙族问题。
+          </p>
+          <div class="detail-grid">
+            <div>
+              <h4>关键线索</h4>
+              <ul id="detail-clues"></ul>
+            </div>
+            <div>
+              <h4>相关人物 / 地点</h4>
+              <ul id="detail-relations"></ul>
+            </div>
+          </div>
+          <div class="detail-note">
+            <h4>同人脑洞</h4>
+            <p id="detail-note">
+              如果把三人的关系写成守夜人论坛串，最有趣的不是战斗力排序，而是谁在关键节点替别人承担沉默。
+            </p>
+          </div>
+          <div class="detail-links" id="detail-links"></div>
+        </article>
+      </section>
+
+      <section id="projects" class="projects section-band">
+        <div class="section-heading">
+          <p>Index 03</p>
           <h2>装备部公开工具箱</h2>
         </div>
         <div class="project-grid">
-          <a class="repo-card" href="https://github.com/samjjkl1122-lang" target="_blank" rel="noreferrer">
+          <button class="repo-card" type="button" data-detail="project-index">
             <span class="repo-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M6 4h9l3 3v13H6z" />
@@ -142,8 +219,8 @@
               <p>卡塞尔学院同人文章索引、标签和龙族设定追踪器。</p>
             </div>
             <span class="repo-meta">TypeScript</span>
-          </a>
-          <a class="repo-card" href="https://github.com/samjjkl1122-lang" target="_blank" rel="noreferrer">
+          </button>
+          <button class="repo-card" type="button" data-detail="project-norma">
             <span class="repo-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M5 19 19 5M8 5h11v11" />
@@ -155,13 +232,16 @@
               <p>把路明非、诺诺、楚子航与龙王线索同步成可检索时间线。</p>
             </div>
             <span class="repo-meta">Markdown</span>
-          </a>
+          </button>
           <div id="notes" class="x-strip">
             <div>
               <p>X / latest</p>
               <strong>今晚继续把守夜人论坛做得更像卡塞尔学院内部匿名版。</strong>
             </div>
-            <a href="https://x.com/myname__aalexia" target="_blank" rel="noreferrer">打开 X</a>
+            <div class="x-actions">
+              <button type="button" data-detail="x-latest">查看细节</button>
+              <a href="https://x.com/myname__aalexia" target="_blank" rel="noreferrer">打开 X</a>
+            </div>
           </div>
         </div>
       </section>
@@ -194,6 +274,6 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=2"></script>
+    <script src="./script.js?v=3"></script>
   </body>
 </html>

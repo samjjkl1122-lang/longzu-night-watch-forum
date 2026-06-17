@@ -12,7 +12,7 @@
       rel="icon"
       href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%2305080d"/><rect x="10" y="10" width="44" height="44" fill="none" stroke="%23d7a64d" stroke-width="2"/><text x="32" y="39" font-size="24" text-anchor="middle" fill="%23d7a64d" font-family="monospace">N</text></svg>'
     />
-    <link rel="stylesheet" href="./styles.css?v=3" />
+    <link rel="stylesheet" href="./styles.css?v=4" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -27,6 +27,7 @@
         <a href="#notes">手札</a>
         <a href="#tags">标签</a>
         <a href="#projects">项目</a>
+        <a href="#messages">留言</a>
         <a href="#about">关于</a>
       </nav>
       <div class="socials">
@@ -254,14 +255,55 @@
             路明非、楚子航、恺撒、诺诺、龙王与尼伯龙根相关的阅读笔记、脑洞和项目。
           </p>
         </div>
-        <form class="contact-card">
-          <label for="contact">留下一条信号</label>
-          <div>
-            <input id="contact" name="contact" type="email" placeholder="you@example.com" />
-            <button type="submit">记录</button>
+        <aside class="contact-card">
+          <span>留言板状态</span>
+          <strong>GitHub Discussions 已接入</strong>
+          <p>访客使用 GitHub 登录后可以留言，你可以在仓库 Discussions 的 General 分类里查看和回复。</p>
+          <a href="#messages">前往留言板</a>
+        </aside>
+      </section>
+
+      <section id="messages" class="messages section-band">
+        <div class="section-heading">
+          <p>Public Signal Board</p>
+          <h2>守夜人留言板</h2>
+        </div>
+        <div class="message-intro">
+          <p>
+            留言会公开保存在 GitHub Discussions。你可以写读后感、点梗、报错，
+            或者投递一条来自卡塞尔学院深夜值班室的匿名感想。
+          </p>
+          <div class="message-actions">
+            <a href="https://github.com/apps/giscus" target="_blank" rel="noreferrer">
+              安装 Giscus
+            </a>
+            <a href="https://github.com/samjjkl1122-lang/longzu-night-watch-forum/discussions" target="_blank" rel="noreferrer">
+              打开 Discussions
+            </a>
           </div>
-          <p class="form-status" role="status"></p>
-        </form>
+        </div>
+        <p class="message-hint">
+          如果下方显示 giscus 未安装，请先点“安装 Giscus”，选择这个仓库并授权。授权后留言板会自动可用。
+        </p>
+        <div class="giscus-frame">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="samjjkl1122-lang/longzu-night-watch-forum"
+            data-repo-id="R_kgDOS9ZNRA"
+            data-category="General"
+            data-category-id="DIC_kwDOS9ZNRM4C_VlF"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="dark_dimmed"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+          ></script>
+        </div>
       </section>
     </main>
 
@@ -274,6 +316,6 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=3"></script>
+    <script src="./script.js?v=4"></script>
   </body>
 </html>

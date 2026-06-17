@@ -391,7 +391,8 @@ h1 {
 
 .posts,
 .projects,
-.about {
+.about,
+.messages {
   padding: 96px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -685,58 +686,89 @@ h1 {
   line-height: 2;
 }
 
-.contact-card {
+.contact-card,
+.message-intro,
+.giscus-frame {
   border: 1px solid var(--line-strong);
   padding: 24px;
   background: rgba(7, 11, 16, 0.72);
 }
 
-.contact-card label {
+.contact-card span,
+.contact-card a,
+.message-actions a {
   display: block;
-  margin-bottom: 16px;
   color: var(--amber);
   font-family: var(--mono);
   font-size: 12px;
+  text-transform: uppercase;
 }
 
-.contact-card div {
-  display: grid;
-  grid-template-columns: 1fr auto;
+.contact-card strong {
+  display: block;
+  margin: 14px 0 12px;
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.contact-card p,
+.message-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact-card a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  margin-top: 18px;
   border: 1px solid var(--line);
+  padding: 0 12px;
 }
 
-.contact-card input,
-.contact-card button {
-  min-height: 46px;
-  border: 0;
+.message-intro {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
 
-.contact-card input {
-  width: 100%;
-  min-width: 0;
-  padding: 0 14px;
-  background: transparent;
-  color: var(--text);
+.message-intro p {
+  max-width: 760px;
 }
 
-.contact-card input:focus {
-  outline: 1px solid var(--line-strong);
-  outline-offset: -1px;
+.message-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
 }
 
-.contact-card button {
-  padding: 0 16px;
-  background: var(--amber);
-  color: #120e08;
-  cursor: pointer;
+.message-actions a {
+  flex: 0 0 auto;
+  border: 1px solid var(--line-strong);
+  padding: 12px 14px;
 }
 
-.form-status {
-  min-height: 22px;
-  margin: 12px 0 0;
+.message-hint {
+  margin: 0 0 18px;
+  border: 1px solid var(--line);
+  padding: 14px 16px;
   color: var(--blue);
   font-family: var(--mono);
   font-size: 12px;
+  line-height: 1.7;
+}
+
+.giscus-frame {
+  min-height: 260px;
+}
+
+.giscus-frame .giscus,
+.giscus-frame .giscus-frame {
+  width: 100%;
 }
 
 .site-footer {
@@ -846,13 +878,14 @@ h1 {
   }
 
   .featured-thread,
-  .repo-card,
-  .contact-card div {
+  .repo-card {
     grid-template-columns: 1fr;
   }
 
   .detail-topline,
-  .x-actions {
+  .x-actions,
+  .message-intro,
+  .message-actions {
     align-items: stretch;
     flex-direction: column;
   }

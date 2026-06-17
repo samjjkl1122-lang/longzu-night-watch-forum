@@ -1,8 +1,6 @@
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
 const rows = document.querySelectorAll(".thread-row");
-const form = document.querySelector(".contact-card");
-const statusLine = document.querySelector(".form-status");
 const detailButtons = document.querySelectorAll("[data-detail]");
 const detailPanel = document.querySelector("#detail-panel");
 const detailKind = document.querySelector("#detail-kind");
@@ -278,13 +276,5 @@ detailLinks?.addEventListener("click", (event) => {
 });
 
 detailReset?.addEventListener("click", () => showDetail("post-team"));
-
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const email = new FormData(form).get("contact");
-  statusLine.textContent = email
-    ? "信号已记录在本地演示状态。"
-    : "请输入一个邮箱地址。";
-});
 
 showDetail("post-team", false);
